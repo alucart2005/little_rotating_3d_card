@@ -35,7 +35,7 @@ body section .card .box {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: 1.5s ease;
+  transition: 1s ease-in;
 }
 body section .card .box:hover {
   transform: rotateY(180deg);

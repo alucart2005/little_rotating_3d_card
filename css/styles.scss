@@ -10,9 +10,7 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-
-section{
+  section{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,12 +34,9 @@ section{
       height: 100%;
       transform-style: preserve-3d;
       transition: 1.5s ease;
-    }
-    &:hover {
-      .box{
-      transform: rotateY(180deg);
+      &:hover {
+        transform: rotateY(180deg);
       }
-      
     }
     .imgBx{
         position: absolute;
@@ -72,11 +67,13 @@ section{
         transform-style: inherit;
         backface-visibility: hidden;
         div{
+          height: 95%;
+          overflow: hidden;
           transform-style: preserve-3d;
           transform: translateZ(100px);
           background: linear-gradient(45deg, #ff0000, #9b9264);
           padding: 10px;
-          margin: 0 20px;
+          margin: 0px 20px;
           border-radius: 15px;
           h2{
             font-size: 20px;
@@ -91,6 +88,27 @@ section{
           }
         }
     }
+  }
+}
 
+}
+
+@media screen and (max-width: 300px) {
+  section{
+    .card{
+      width: 220px;
+      height: 220px;
+      margin: 10px;
+      .contentBx{
+          div{
+            h2{
+              font-size: 16px;
+            }
+            p{
+              font-size: 11px;
+            }
+          }
+      }
+    }
   }
 }

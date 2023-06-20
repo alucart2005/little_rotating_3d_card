@@ -12,8 +12,7 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
-section {
+body section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +20,7 @@ section {
   width: 100%;
   flex-wrap: wrap;
 }
-section .card {
+body section .card {
   position: relative;
   width: 320px;
   height: 320px;
@@ -29,7 +28,7 @@ section .card {
   border-radius: 15px;
   overflow: hidden;
 }
-section .card .box {
+body section .card .box {
   position: absolute;
   top: 0;
   left: 0;
@@ -38,17 +37,17 @@ section .card .box {
   transform-style: preserve-3d;
   transition: 1.5s ease;
 }
-section .card:hover .box {
+body section .card .box:hover {
   transform: rotateY(180deg);
 }
-section .card .imgBx {
+body section .card .imgBx {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-section .card .imgBx img {
+body section .card .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,7 +56,7 @@ section .card .imgBx img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-section .card .contentBx {
+body section .card .contentBx {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,20 +70,36 @@ section .card .contentBx {
   transform-style: inherit;
   backface-visibility: hidden;
 }
-section .card .contentBx div {
+body section .card .contentBx div {
+  height: 95%;
+  overflow: hidden;
   transform-style: preserve-3d;
   transform: translateZ(100px);
   background: linear-gradient(45deg, #ff0000, #9b9264);
   padding: 10px;
-  margin: 0 20px;
+  margin: 0px 20px;
   border-radius: 15px;
 }
-section .card .contentBx div h2 {
+body section .card .contentBx div h2 {
   font-size: 20px;
   color: #fff;
   letter-spacing: 1px;
 }
-section .card .contentBx div p {
+body section .card .contentBx div p {
   font-size: 16px;
   color: #fff;
+}
+
+@media screen and (max-width: 300px) {
+  section .card {
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+  }
+  section .card .contentBx div h2 {
+    font-size: 16px;
+  }
+  section .card .contentBx div p {
+    font-size: 11px;
+  }
 }/*# sourceMappingURL=styles.css.map */

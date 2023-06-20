@@ -11,12 +11,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(to top, #723131, #b6a6a6, #ad5151);
 }
 body section {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-style: preserve-3d;
+  perspective: 1000px;
   width: 100%;
   flex-wrap: wrap;
 }
@@ -25,7 +26,6 @@ body section .card {
   width: 320px;
   height: 320px;
   margin: 20px;
-  transform-style: preserve-3d;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -36,19 +36,19 @@ body section .card .box {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: 1s ease;
+  transition: 1s ease-in;
 }
 body section .card .box:hover {
   transform: rotateY(180deg);
 }
-body section .card .box .imgBx {
+body section .card .imgBx {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-body section .card .box .imgBx img {
+body section .card .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,37 +57,50 @@ body section .card .box .imgBx img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-body section .card .box .contentBx {
+body section .card .contentBx {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #333;
+  background: rgba(51, 51, 51, 0.9);
   transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: preserve-3d;
+  transform-style: inherit;
   backface-visibility: hidden;
 }
-body section .card .box .contentBx div {
+body section .card .contentBx div {
+  height: 95%;
+  overflow: hidden;
   transform-style: preserve-3d;
   transform: translateZ(100px);
   background: linear-gradient(45deg, #ff0000, #9b9264);
-  padding: 20px;
-  margin: 0 20px;
+  padding: 10px;
+  margin: 0px 20px;
   border-radius: 15px;
 }
-body section .card .box .contentBx div h2 {
+body section .card .contentBx div h2 {
   font-size: 20px;
   color: #fff;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  backface-visibility: hidden;
 }
-body section .card .box .contentBx div p {
+body section .card .contentBx div p {
   font-size: 16px;
   color: #fff;
-  backface-visibility: hidden;
+}
+
+@media screen and (max-width: 300px) {
+  section .card {
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+  }
+  section .card .contentBx div h2 {
+    font-size: 16px;
+  }
+  section .card .contentBx div p {
+    font-size: 11px;
+  }
 }/*# sourceMappingURL=styles.css.map */

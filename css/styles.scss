@@ -10,81 +10,105 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(to top, #723131, #b6a6a6,  #ad5151);
   section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    width: 100%;
-    flex-wrap: wrap;
-    .card{
-      position: relative;
-      width: 320px;
-      height: 320px;
-      margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // transform-style: preserve-3d;
+  perspective: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+  .card{
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 20px;
+    // transform-style: preserve-3d;
+    border-radius: 15px;
+    overflow: hidden;
+    .box{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       transform-style: preserve-3d;
-      border-radius: 15px;
-      overflow: hidden;
-      .box{
+      transition: 1s ease-in;
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+    .imgBx{
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        transform-style: preserve-3d;
-        transition: 1s ease;
-      &:hover{
-        transform: rotateY(180deg);
-      }
-        .imgBx{
+        img{
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+          object-fit: cover;
+        }
+    }
+    .contentBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(51, 51, 51, 0.9);
+        transform: rotateY(180deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: inherit;
+        backface-visibility: hidden;
+        div{
+          height: 95%;
+          overflow: hidden;
+          transform-style: preserve-3d;
+          transform: translateZ(100px);
+          background: linear-gradient(45deg, #ff0000, #9b9264);
+          padding: 10px;
+          margin: 0px 20px;
+          border-radius: 15px;
+          h2{
+            font-size: 20px;
+            color: #fff;
+            letter-spacing: 1px;
+            //backface-visibility: hidden;
+          }
+          p{
+            font-size: 16px;
+            color: #fff;
+            //backface-visibility: hidden;
           }
         }
-        .contentBx{
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: #333;
-          transform: rotateY(180deg);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transform: preserve-3d;
-          backface-visibility: hidden;
+    }
+  }
+}
+
+}
+
+@media screen and (max-width: 300px) {
+  section{
+    .card{
+      width: 220px;
+      height: 220px;
+      margin: 10px;
+      .contentBx{
           div{
-            transform-style: preserve-3d;
-            transform: translateZ(100px);
-            background: linear-gradient(45deg, #ff0000, #9b9264);
-            padding: 20px;
-            margin: 0 20px;
-            border-radius: 15px;
             h2{
-              font-size: 20px;
-              color: #fff;
-              letter-spacing: 1px;
-              text-transform: uppercase;
-              backface-visibility: hidden;
+              font-size: 16px;
             }
             p{
-              font-size: 16px;
-              color: #fff;
-              backface-visibility: hidden;
+              font-size: 11px;
             }
           }
-        }
       }
     }
   }
